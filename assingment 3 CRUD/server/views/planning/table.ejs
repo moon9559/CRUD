@@ -1,0 +1,51 @@
+<%- include ../partials/header.ejs %>
+<%- include ../partials/main_nav.ejs %>
+
+  <!-- nav bar-->
+
+<!--main content here -->
+<main div class="container">
+    <div class="row">
+        <div class ="col-md-offset-2 col-md-13">
+            <h1><%= title %></h1>
+            <a href="/planner/add" class="btn btn-primary" role ="button">
+            <i class="fas fa-plus-circle"></i> Add Event
+            </a>
+            <br>
+            <br>
+        <table class = "table table-bordered table-striped table-hover">
+        <tr>
+            <th class ="text-center col-1">Title</th>
+            <th class ="text-center col-3">Note</th>
+            <th class ="text-center col-2">Date</th>
+            <th class ="text-center col-2">Time</th>
+            <th class ="text-center col-2">Place</th>
+            <th class ="text-center col-1"></th>
+            <th class ="text-center col-1"></th>
+        </tr>
+        <!-- loop to repeat template -->
+        <% for(let count=0; count<plans.length; count++) { %>
+            <tr>
+                <td class ="text-center"><%= plans[count].Title %></td>
+                <td class ="text-center"><%= plans[count].Note %></td>
+                <td class ="text-center"><%= plans[count].Date %></td>
+                <td class ="text-center"><%= plans[count].Time %></td>
+                <td class ="text-center"><%= plans[count].Place %></td>
+                <td class="text-center col-1">
+                    <a href="/planner/edit<%= plans[count]._id %>"
+                        class = "btn btn-primary">
+                        <i class ="fa-sharp fa-solid fa-circle-dashed"></i>Edit</a>
+                </td>
+                <td class="text-center col-1">
+                    <a href="/planner/delete/<%= plans[count]._id %>"
+                        class = "btn btn-danger">
+                        <i class ="fas fa-trash-alt"></i>Delete</a>
+                </td>
+            </tr>
+        <% } %>
+        </table>
+        </div>
+    </div>
+</main>
+<%- include ../partials/bottom_nav.ejs %>
+<%- include ../partials/footer.ejs %>

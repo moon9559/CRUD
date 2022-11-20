@@ -1,0 +1,64 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">Planner</a>
+    <button class="navbar-toggler" class ="navbar navbar-light" style="bakground-color:#deb877;" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav ms-auto ">
+        
+        <li class="nav-item">
+        <% if (title=="Home") {%>
+          <a class="nav-link active" aria-current="page" href="/home">
+          <% } else { %>
+          <a class="nav-link " aria-current="page" href="/home">
+          <% } %>
+          <i class="fa-solid fa-lg fa-house"></i> Home</a>
+        </li>
+
+        <li class="nav-item">
+        <% if (title=="Planner") {%>
+          <a class="nav-link active" aria-current="page" href="/planner">
+          <% } else { %>
+          <a class="nav-link " aria-current="page" href="/planner">
+          <% } %>
+          <i class="fa-solid fa-calendar"></i> Planner</a>
+        </li>
+
+        <li class="nav-item">
+        <% if (title == "About Me") { %>
+          <a class="nav-link active " aria-current="page" href="/about">
+        <% } else { %>
+          <a class="nav-link " aria-current="page" href="/about">
+        <% } %>
+          <i class="fa-solid fa-address-card"></i> About Me</a>
+        </li>
+        
+        <li class="nav-item">
+        <% if (title == "Projects") { %>
+          <a class="nav-link active" aria-current="page" href="/projects">
+        <% } else { %>
+          <a class="nav-link " aria-current="page" href="/projects">
+        <% } %>
+          <i class="fa-solid fa-box"></i> Projects </a>
+        </li>
+
+        <li class="nav-item">
+        <% if (title == "Contact") { %>
+          <a class="nav-link active " aria-current="page" href="/contact">
+        <% } else { %>
+          <a class="nav-link " aria-current="page" href="/contact">
+          <% } %>
+          <i class="fa-solid fa-phone-flip"></i> Contact</a> 
+
+        
+          
+        </li> 
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<% if (title == "Home") {%>
+        <%- include home.ejs %>
+        <% } %>

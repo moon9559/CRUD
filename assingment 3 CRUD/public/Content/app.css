@@ -1,0 +1,24 @@
+/*custom css goes here for prject */
+
+
+#box{
+    padding: 10%;
+    background-color: palegoldenrod;
+    
+
+}
+
+
+#footer{
+    padding: 0%;
+    margin-top: 38%;
+    margin-bottom: 3%;
+    background-color: grey;
+    color: antiquewhite;
+}
+
+#header{
+margin: auto;
+background-color: beige;
+padding: 10%;
+}
